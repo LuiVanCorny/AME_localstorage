@@ -22,12 +22,18 @@ export class ListView {
       htmlTable += htmlTr;
     }
 
+    const htmlFriendsCounter = `
+    <p>Anzahl der Freunde: ${this.presenter.getFriendsCounterForView()}
+    </p>
+    `;
+
     const html = `
         <h2>ListView</h2>
         <table>
             ${htmlTable}
         </table>
         <button id="buttonNew">New</button>
+        ${htmlFriendsCounter}
         `;
     this.app = document.getElementById('app');
     this.app.innerHTML = html;

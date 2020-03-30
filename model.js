@@ -32,4 +32,15 @@ export class Model {
   deletePerson(index) {
     this.personList.splice(index, 1);
   }
+
+  getFriendsCounter(){
+    let counterFriends = 0;
+    this.personList.forEach(person => {
+      if(person.isFriend == true){
+        counterFriends++;
+      }
+      
+    });
+    return counterFriends;
+  }
 }

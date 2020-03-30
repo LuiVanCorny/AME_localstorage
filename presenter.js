@@ -31,6 +31,10 @@ export class Presenter {
     this._showListView();
   }
 
+  getFriendsCounterForView(){
+    return this.model.getFriendsCounter();
+  }
+
   //------ from CreateUpdateView ------------
   buttonSaveClicked(index) {
     // read data from CreateUpdateView
