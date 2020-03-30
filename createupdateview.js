@@ -14,6 +14,10 @@ export class CreateUpdateView {
           <legend>Birthday</legend>
             <input id="inputBirthday" type="date"></input>
         </fieldset>
+        <fieldset>
+          <legend>Freund</legend>
+            <input type="checkbox" id="friend"/>
+        </fieldset>
         <button id="buttonSave">Save</button>
         <button id="buttonCancel">Cancel</button>
         `;
@@ -22,10 +26,15 @@ export class CreateUpdateView {
     // Controls
     this.inputName = document.getElementById('inputName');
     this.inputBirthday = document.getElementById('inputBirthday');
+    this.inputFriend = document.getElementById('friend');
 
     // Display values
     this.inputName.value = person.name;
     this.inputBirthday.value = person.birthday;
+
+    if(person.isFriend == true){
+      this.inputFriend.checked = true;
+    }
 
     // Events
     this._registerEvents(index);
@@ -49,5 +58,9 @@ export class CreateUpdateView {
 
   getBirthday() {
     return this.inputBirthday.value;
+  }
+
+  getIsFriend(){
+    return this.inputFriend.checked;
   }
 }

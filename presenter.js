@@ -22,7 +22,7 @@ export class Presenter {
   }
 
   buttonNewClicked() {
-    const person = new Person('Please insert name', '1999-12-24');
+    const person = new Person('Please insert name', '1999-12-24', 'false');
     this.view = new CreateUpdateView(this, -1, person);
   }
 
@@ -36,7 +36,8 @@ export class Presenter {
     // read data from CreateUpdateView
     const newName = this.view.getName();
     const newBirthday = this.view.getBirthday();
-    const newPerson = new Person(newName, newBirthday);
+    const newIsFriend = this.view.getIsFriend();
+    const newPerson = new Person(newName, newBirthday, newIsFriend);
 
     if (index < 0) {
       // create new person
