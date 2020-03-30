@@ -15,7 +15,7 @@ export class ListView {
       const htmlTr = `<tr>
               <td>${person.name}</td>
               <td>${person.birthday}</td>
-              <td>${this.getAge(person.birthday)}</td>
+              <td>${person.age}</td>
               <td>${isFriend}</td>
               <td><button class="buttonUpdate">Update</button></td>
               <td><button class="buttonDelete">Delete</button></td>
@@ -64,14 +64,4 @@ export class ListView {
     });
   }
 
-  getAge(dateString) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-    return age;
-  }
 }

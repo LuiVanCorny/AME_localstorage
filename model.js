@@ -2,11 +2,11 @@ import { Person } from './person.js';
 
 export class Model {
   constructor() {
-    this.personList = [
-      { name: 'Anna Arm', birthday: '2001-12-24', isFriend: false },
-      { name: 'Berta Bein', birthday: '1993-07-12', isFriend: true },
-      { name: 'Carla Copf', birthday: '1980-03-07', isFriend: true }
-    ];
+    this.personList = [];
+    this.addPerson(new Person("Anna Arm", '2001-12-24', false));
+    this.addPerson(new Person("Berta Bein", '1993-07-12', true));
+    this.addPerson(new Person("Carla Copf", '1980-03-07', true));
+    
   }
 
   // CREATE
