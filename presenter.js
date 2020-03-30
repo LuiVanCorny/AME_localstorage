@@ -12,7 +12,7 @@ export class Presenter {
 
   _showListView() {
     const personList = this.model.getAllPersons();
-    this.view = new ListView(this, personList);
+    this.view = new ListView(this, personList, this.model.getFriendsCounter());
   }
 
   //------ from ListView ----------
@@ -31,9 +31,6 @@ export class Presenter {
     this._showListView();
   }
 
-  getFriendsCounterForView(){
-    return this.model.getFriendsCounter();
-  }
 
   //------ from CreateUpdateView ------------
   buttonSaveClicked(index) {

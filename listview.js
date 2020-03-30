@@ -1,5 +1,5 @@
 export class ListView {
-  constructor(presenter, personList) {
+  constructor(presenter, personList, friendsCounter) {
     this.presenter = presenter;
 
     // ---- HTML ----
@@ -23,7 +23,7 @@ export class ListView {
     }
 
     const htmlFriendsCounter = `
-    <p>Anzahl der Freunde: ${this.presenter.getFriendsCounterForView()}
+    <p>Anzahl der Freunde: ${friendsCounter}
     </p>
     `;
 
