@@ -3,7 +3,7 @@ export class ListView {
     this.presenter = presenter;
 
     // ---- HTML ----
-    let htmlTable = '<tr><th>Name</th><th>Birthday</th><th>Freund?</th><th></th><th></th></tr>';
+    let htmlTable = '<tr><th>Name</th><th>Birthday</th><th>Alter in Jahre</th><th>Freund?</th><th></th><th></th></tr>';
     for (let i = 0; i < personList.length; i++) {
       const person = personList[i];
       let isFriend = "Nein";
@@ -15,6 +15,7 @@ export class ListView {
       const htmlTr = `<tr>
               <td>${person.name}</td>
               <td>${person.birthday}</td>
+              <td>${this.getAge(person.birthday)}</td>
               <td>${isFriend}</td>
               <td><button class="buttonUpdate">Update</button></td>
               <td><button class="buttonDelete">Delete</button></td>
@@ -61,5 +62,16 @@ export class ListView {
     buttonNew.addEventListener('click', () => {
       this.presenter.buttonNewClicked();
     });
+  }
+
+  getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
   }
 }
