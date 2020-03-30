@@ -3,7 +3,6 @@ export class Person {
     this.name = name;
     this.birthday = birthday;
     this.isFriend = isFriend;
-    this.age = -1;
     this.setAge();
   }
 
