@@ -12,7 +12,7 @@ export class Presenter {
 
   _showListView() {
     const personList = this.model.getAllPersons();
-    this.view = new ListView(this, personList, this.model.getFriendsCounter());
+    this.view = new ListView(this, personList, this.model.getFriendsCounter(), this.model.getCounterParents(), this.model.getCounterChild());
   }
 
   //------ from ListView ----------

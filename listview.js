@@ -1,5 +1,5 @@
 export class ListView {
-  constructor(presenter, personList, friendsCounter) {
+  constructor(presenter, personList, friendsCounter, parentsCounter, childCounter) {
     this.presenter = presenter;
 
     // ---- HTML ----
@@ -23,8 +23,12 @@ export class ListView {
       htmlTable += htmlTr;
     }
 
-    const htmlFriendsCounter = `
+    const htmlCounter = `
     <p>Anzahl der Freunde: ${friendsCounter}
+    </p>
+    <p>Anzahl der Erwachsenen: ${parentsCounter}
+    </p>
+    <p>Anzahl der Kinder: ${childCounter}
     </p>
     `;
 
@@ -34,7 +38,7 @@ export class ListView {
             ${htmlTable}
         </table>
         <button id="buttonNew">New</button>
-        ${htmlFriendsCounter}
+        ${htmlCounter}
         `;
     this.app = document.getElementById('app');
     this.app.innerHTML = html;

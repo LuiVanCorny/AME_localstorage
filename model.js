@@ -43,4 +43,26 @@ export class Model {
     });
     return counterFriends;
   }
+
+  getCounterParents(){
+    let counterParents = 0;
+    this.personList.forEach(person => {
+      if(person.age > 17){
+        counterParents++;
+      }
+      
+    });
+    return counterParents;
+  }
+
+  getCounterChild(){
+    let counterChild = 0;
+    this.personList.forEach(person => {
+      if(person.age <= 17){
+        counterChild++;
+      }
+      
+    });
+    return counterChild;
+  }
 }
